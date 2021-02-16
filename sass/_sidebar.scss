@@ -1,0 +1,43 @@
+.sidebar {
+  background: $color-primary;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center;
+
+  @include respond(large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-start;
+  }
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+
+  @include respond(large) {
+    margin: auto 2rem;
+  }
+
+  &:before,
+  &:after {
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    content: '';
+    display: block;
+  }
+
+  &:before {
+    transform: translateY(-1.2rem);
+  }
+
+  &:after {
+    transform: translateY(1.2rem);
+  }
+}

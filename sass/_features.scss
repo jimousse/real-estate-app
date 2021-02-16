@@ -1,0 +1,37 @@
+.features {
+  grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+
+  @include respond(medium) {
+    margin: 7rem 0;
+  }
+}
+
+.feature {
+  $icon-size: 4.5rem;
+  display: grid;
+  grid-template-columns: $icon-size 1fr;
+  grid-template-rows: $icon-size 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+
+  .heading-4 {
+    align-self: center;
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: $icon-size;
+    height: $icon-size;
+    grid-row: 1 / span 2;
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}

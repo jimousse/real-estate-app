@@ -1,0 +1,36 @@
+/*
+MEDIA QUERY MANAGER
+
+0 - 600px:      phone
+600 - 900px:    tablet portrait
+900 - 1200px:   tablet landscape
+1200 - 1800px:  normal styles
+1800px+:        big desktop
+
+$breakpont:
+- phone
+- tab-port
+-tab-land
+-big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == largest {
+    @media only screen and (max-width: 75rem) { @content }; // 1200px /16px
+  }
+
+  @if $breakpoint == large {
+    @media only screen and (max-width: 62.5rem) { @content }; // 1000px /16px
+  }
+
+  @if $breakpoint == medium {
+    @media only screen and (max-width: 50em) { @content }; // 800px /16px
+  }
+
+  @if $breakpoint == small { 
+    @media only screen and (max-width: 37.5em) { @content }; // 600px /16px
+  }
+
+  @if $breakpoint == smallest {
+    @media only screen and (max-width: 25em) { @content }; // 400px /16px
+  }
+}
