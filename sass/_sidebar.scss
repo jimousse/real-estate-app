@@ -24,6 +24,10 @@
     margin: auto 2rem;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &:before,
   &:after {
     background-color: #fff;
@@ -34,7 +38,7 @@
   }
 
   &:before {
-    transform: translateY(-1.2rem);
+    transform: translateY(calc(-1.2rem - 2px));
   }
 
   &:after {
